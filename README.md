@@ -1,4 +1,4 @@
-# Projeto CRUD de Produtos
+# Projeto CRUD de Produtos Bando de dados MongoDB
 
 Este é um projeto de exemplo que demonstra como criar uma aplicação de CRUD de candidatos usando Angular 13 e .NET 6, com funcionalidades de criação, atualização, exclusão e listagem de candidatos. Além disso, a aplicação inclui validações de CPF e email e foi construída com o uso da biblioteca Po-UI para a interface do usuário.
 
