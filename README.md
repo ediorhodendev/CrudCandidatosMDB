@@ -1,12 +1,16 @@
-# Frontend do Projeto CRUD de Candidatos
+# Projeto CRUD de Produtos
 
-Este é o frontend do projeto de exemplo que demonstra como criar uma aplicação de CRUD de candidatos usando Angular 13 e .NET 6. A interface do usuário foi desenvolvida com a biblioteca Po-UI, que oferece componentes e recursos prontos para uso.
+Este é um projeto de exemplo que demonstra como criar uma aplicação de CRUD de candidatos usando Angular 13 e .NET 6, com funcionalidades de criação, atualização, exclusão e listagem de candidatos. Além disso, a aplicação inclui validações de CPF e email e foi construída com o uso da biblioteca Po-UI para a interface do usuário.
 
-## Funcionalidades
+## Estrutura da Solution
 
 A Solution consiste nos seguintes projetos:
 
-
+- **CandidatoApp**: O projeto principal que contém a API da aplicação.
+- **Candidato.Application**: Camada de aplicação que lida com a lógica de negócios.
+- **Candidato.Domain**: Camada de domínio que define os modelos de dados da aplicação.
+- **Candidato.Infrastructure**: Camada de infraestrutura que lida com o acesso ao banco de dados e implementações concretas.
+- **Candidato.Tests**: Projetos de testes unitários para testar a aplicação.
 
 ## Funcionalidades
 
@@ -19,19 +23,31 @@ A Solution consiste nos seguintes projetos:
 
 ## Requisitos
 
--Angular 16 ou superior.
--Node.js e npm instalados.
--Angular CLI (Command Line Interface) instalado globalmente.
--Acesso à API .NET do projeto de backend (certifique-se de que a API está em execução).
+- .NET 6 ou superior.
+- Entity Framework Core.
+- Docker (para o banco de dados mongo DB).
+- Swagger/OpenAPI para documentação da API.
+- Testes unitários para garantir a qualidade do código.
 
 
 ## Configuração
 
-Para configurar e executar o frontend do projeto, siga estas etapas:
-Clone o repositório 
-Abra o a pasta no vs
-Npm Install
-Ng serve
-Abra seu navegador e acesse http://localhost:4200.
+Certifique-se de configurar a string de conexão com o banco de dados MongoDB no arquivo `appsettings.json` do projeto `CrudProdutosApi`.
+ },
+ "ConnectionStrings": {
+   "MongoDBConnection": "mongodb://root:totus123@localhost:27017",
+   "MongoDBDatabaseName": "candidato-api-mdb"
+   
+Se necessário altera as portas. 
+### Utilizando Docker e MongoDB
 
-Agora, você tem o frontend do projeto de CRUD de candidatos em execução localmente. Você pode interagir com a aplicação, cadastrar candidatos, atualizar informações e realizar operações de CRUD. Certifique-se de que o backend também esteja em execução para que o frontend possa se comunicar com a API.
+Este projeto utiliza Docker para executar um contêiner do MongoDB. Siga as instruções abaixo:
+
+1. **Instale o Docker**: Se você ainda não tiver o Docker instalado, faça o download e instale-o a partir do [site oficial do Docker](https://www.docker.com/get-started).
+
+2. **Execute o Contêiner do mongo db**:
+
+   Execute o seguinte comando no terminal para baixar e iniciar um contêiner do MongoDB: na raiz do projeto execute o comando para criar as imagens no docker
+   
+   docker-compose up
+   Obs: verifique se o arquivo docker-compose.yml está na raiz do projeto.
